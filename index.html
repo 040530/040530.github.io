@@ -1,0 +1,234 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta content="IE=10.000" http-equiv="X-UA-Compatible">
+<title>Love forever!</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link href="love/default.css" rel="stylesheet" type="text/css">
+<script src="love/jquery.min.js" type="text/javascript"></script>
+<script src="love/jscex.min.js" type="text/javascript"></script>
+<script src="love/jscex-parser.js" type="text/javascript"></script>
+<script src="love/jscex-jit.js" type="text/javascript"></script>
+<script src="love/jscex-builderbase.min.js" type="text/javascript"></script>
+<script src="love/jscex-async.min.js" type="text/javascript"></script>
+<script src="love/jscex-async-powerpack.min.js" type="text/javascript"></script>
+<script src="love/functions.js" type="text/javascript" charset="utf-8"></script>
+<script src="love/love.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+<div id="main">
+  <div id="error">亲，您使用的浏览器无法支持即将显示的内容，请换成谷歌(<A href="http://www.google.cn/chrome/intl/zh-CN/landing_chrome.html?hl=zh-CN&amp;brand=CHMI">Chrome</A>)或者火狐(<A 
+href="http://firefox.com.cn/download/">Firefox</A>)浏览器哟~</div>
+  <div id="wrap">
+    <div id="text">
+      <div id="code">
+        <span class="comments">/**</span><br>
+        <span class="space"><span class="comments">* 2014年5月是我与 Rachel 携手走过的十周年，</span></span><br> 
+        <span class="space"><span class="comments">* 感谢您在我人生最低谷时，一直陪伴在我左右，支持我，帮助鼓励我。希望能就这样平平静静的牵你手，一直走。</span></span><br>
+        <span class="space"><span class="comments">*/</span></span><br>
+    
+        <span class="say">public class 给最爱啲老婆 {</span><BR>
+        <span class="space tab"><span class="comments">// Rachel系私有，全局唯Ⅰ，不可更改继承啲</span></span><br>
+        <span class="say tab">private static final class Rachel {</span><BR>
+        <span class="say tab2">private static final String 可爱等级 = "世界上最可爱啲\r"; </span><BR>
+        <span class="say tab2">private static final String 勤劳等级 = "世界上最勤劳啲\r"; </span><BR>
+        <span class="say tab2">private static final String 善良等级 = "世界上最善良啲\r"; </span><BR>
+        <span class="say tab2">private static final String 懂我等级 = "世界上最懂我啲\r"; </span><BR>
+        <span class="say tab2">private static final String 照顾我等级 = "世界上最精心照顾我啲\r"; </span><BR>
+        <span class="say tab2">private static final String 对我啲意义 = "你系我Ⅰ生最爱啲人\r";</span><BR>       
+        <span class="say tab">} </span><BR>    
+        <span class="say tab">... </span><BR> 
+        
+        <span class="say tab">public static void main(String[] args) { </span><BR>     
+        <span class="say tab2">int myAge = 21; </span><BR>
+        <span class="space tab2"><span class="comments">// 爱你Ⅰ万年 </span></span><br >  
+        <span class="space tab2">while (myAge <= 11314) { </span><br >  
+        <span class="say tab3">boolean 我系否爱你 = true; </span><BR> 
+        <span class="say tab3">myAge++;  </span><BR>      
+        <span class="say tab2">} </span><BR>         
+        <span class="say tab2">System.out.println("希望能就这样平平静静啲牵你手，Ⅰ直走。");  </span><BR>         
+        <span class="say tab2">System.out.println("\t 谢谢你走进我的世界，也让我走入你的世界 -- 永远爱你的Ricky。{羞}");  </span><BR>               
+        <span class="say tab">} </span><BR>
+        <span class="say">} </span><BR>  </div>
+    </div>
+    <div id="clock-box"> <a href="http://weibo.com/shensi520" target="_blank">@Ricky</a> 与 <a href="http://weibo.com/u/1649075613" target="_blank">@Rachel</a> 相爱相识的
+      <div id="clock"></div>
+    </div>
+    <canvas id="canvas"></canvas>
+  </div>
+</div>
+<script>
+    (function(){
+        var canvas = $('#canvas');
+
+        if (!canvas[0].getContext) {
+            $("#error").show();
+            return false;
+        }
+
+        var width = canvas.width();
+        var height = canvas.height();
+        
+        canvas.attr("width", width);
+        canvas.attr("height", height);
+
+        var opts = {
+            seed: {
+                x: width / 2 - 20,
+                color: "rgb(190, 26, 37)",
+                scale: 2
+            },
+            branch: [
+                [535, 680, 570, 250, 500, 200, 30, 100, [
+                    [540, 500, 455, 417, 340, 400, 13, 100, [
+                        [450, 435, 434, 430, 394, 395, 2, 40]
+                    ]],
+                    [550, 445, 600, 356, 680, 345, 12, 100, [
+                        [578, 400, 648, 409, 661, 426, 3, 80]
+                    ]],
+                    [539, 281, 537, 248, 534, 217, 3, 40],
+                    [546, 397, 413, 247, 328, 244, 9, 80, [
+                        [427, 286, 383, 253, 371, 205, 2, 40],
+                        [498, 345, 435, 315, 395, 330, 4, 60]
+                    ]],
+                    [546, 357, 608, 252, 678, 221, 6, 100, [
+                        [590, 293, 646, 277, 648, 271, 2, 80]
+                    ]]
+                ]] 
+            ],
+            bloom: {
+                num: 700,
+                width: 1080,
+                height: 650,
+            },
+            footer: {
+                width: 1200,
+                height: 5,
+                speed: 10,
+            }
+        }
+
+        var tree = new Tree(canvas[0], width, height, opts);
+        var seed = tree.seed;
+        var foot = tree.footer;
+        var hold = 1;
+
+        canvas.click(function(e) {
+            var offset = canvas.offset(), x, y;
+            x = e.pageX - offset.left;
+            y = e.pageY - offset.top;
+            if (seed.hover(x, y)) {
+                hold = 0; 
+                canvas.unbind("click");
+                canvas.unbind("mousemove");
+                canvas.removeClass('hand');
+            }
+        }).mousemove(function(e){
+            var offset = canvas.offset(), x, y;
+            x = e.pageX - offset.left;
+            y = e.pageY - offset.top;
+            canvas.toggleClass('hand', seed.hover(x, y));
+        });
+
+        var seedAnimate = eval(Jscex.compile("async", function () {
+            seed.draw();
+            while (hold) {
+                $await(Jscex.Async.sleep(10));
+            }
+            while (seed.canScale()) {
+                seed.scale(0.95);
+                $await(Jscex.Async.sleep(10));
+            }
+            while (seed.canMove()) {
+                seed.move(0, 2);
+                foot.draw();
+                $await(Jscex.Async.sleep(10));
+            }
+        }));
+
+        var growAnimate = eval(Jscex.compile("async", function () {
+            do {
+    	        tree.grow();
+                $await(Jscex.Async.sleep(10));
+            } while (tree.canGrow());
+        }));
+
+        var flowAnimate = eval(Jscex.compile("async", function () {
+            do {
+    	        tree.flower(2);
+                $await(Jscex.Async.sleep(10));
+            } while (tree.canFlower());
+        }));
+
+        var moveAnimate = eval(Jscex.compile("async", function () {
+            tree.snapshot("p1", 240, 0, 610, 680);
+            while (tree.move("p1", 500, 0)) {
+                foot.draw();
+                $await(Jscex.Async.sleep(10));
+            }
+            foot.draw();
+            tree.snapshot("p2", 500, 0, 610, 680);
+
+            // 会有闪烁不得意这样做, (＞﹏＜)
+            canvas.parent().css("background", "url(" + tree.toDataURL('image/png') + ")");
+            canvas.css("background", "#ffe");
+            $await(Jscex.Async.sleep(300));
+            canvas.css("background", "none");
+        }));
+
+        var jumpAnimate = eval(Jscex.compile("async", function () {
+            var ctx = tree.ctx;
+            while (true) {
+                tree.ctx.clearRect(0, 0, width, height);
+                tree.jump();
+                foot.draw();
+                $await(Jscex.Async.sleep(25));
+            }
+        }));
+
+        var textAnimate = eval(Jscex.compile("async", function () {
+            // 2004-05-30 22:00:00
+		    var together = new Date();
+		    together.setFullYear(2004, 5, 30);
+		    together.setHours(22);
+		    together.setMinutes(0);
+		    together.setSeconds(0);
+		    together.setMilliseconds(0);
+
+		    $("#code").show().typewriter();
+            $("#clock-box").fadeIn(500);
+            while (true) {
+                timeElapse(together);
+                $await(Jscex.Async.sleep(1000));
+            }
+        }));
+
+        var runAsync = eval(Jscex.compile("async", function () {
+            $await(seedAnimate());
+            $await(growAnimate());
+            $await(flowAnimate());
+            $await(moveAnimate());
+
+            textAnimate().start();
+
+            $await(jumpAnimate());
+        }));
+
+        runAsync().start();
+    })();
+    </script> 
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-51127357-1', '1510book.cn');
+  ga('send', 'pageview');
+
+</script>    
+<!--
+PS:能看到这里的朋友, 如果想拿代码泡MM或者学习的, 尽管拿去改, 就不用问作者啦. :)
+-->
+</body>
+</html>
